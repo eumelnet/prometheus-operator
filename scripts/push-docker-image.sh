@@ -20,14 +20,14 @@ CPU_ARCHS="amd64 arm64 arm ppc64le s390x"
 REGISTRIES="${REGISTRIES:-"quay.io ghcr.io"}"
 
 # IMAGE_OPERATOR, IMAGER_RELOADER and IMAGE_WEBHOOK need to be exported to be used by `make`
-export IMAGE_OPERATOR="${IMAGE_OPERATOR:-"eumel8/prometheus-operator/prometheus-operator"}"
-export IMAGE_RELOADER="${IMAGE_RELOADER:-"eumel8/prometheus-operator/prometheus-config-reloader"}"
-export IMAGE_WEBHOOK="${IMAGE_WEBHOOK:="eumel8/prometheus-operator/admission-webhook"}"
+export IMAGE_OPERATOR="${IMAGE_OPERATOR:-"eumel8/prometheus-operator"}"
+export IMAGE_RELOADER="${IMAGE_RELOADER:-"eumel8/prometheus-config-reloader"}"
+export IMAGE_WEBHOOK="${IMAGE_WEBHOOK:="eumel8/prom-admission-webhook"}"
 # Figure out if current commit is tagged
 export TAG="${GITHUB_REF##*/}"
 
 # Push `-dev` images unless commit is tagged
-IMAGE_SUFFIX="-dev"
+#IMAGE_SUFFIX="-dev"
 
 # Use the main image repository if TAG is a semver tag or it is a main or master branch.
 # Otherwise assemble the image tag from VERSION file + short commit SHA and
