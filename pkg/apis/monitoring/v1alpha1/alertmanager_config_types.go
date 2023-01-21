@@ -579,7 +579,7 @@ type WebexConfig struct {
 	RoomID string `json:"roomID,omitempty"`
 	Message string `json:"message,omitempty"`
 	HTTPConfig *HTTPConfig `json:"httpConfig,omitempty"`
-}]
+}
 
 // WeChatConfig configures notifications via WeChat.
 // See https://prometheus.io/docs/alerting/latest/configuration/#wechat_config
