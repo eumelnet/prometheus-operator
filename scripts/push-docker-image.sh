@@ -27,7 +27,7 @@ export IMAGE_WEBHOOK="${IMAGE_WEBHOOK:="eumel8/prometheus-operator/admission-web
 export TAG="${GITHUB_REF##*/}"
 
 # Push `-dev` images unless commit is tagged
-#IMAGE_SUFFIX="-dev"
+IMAGE_SUFFIX="-dev"
 
 # Use the main image repository if TAG is a semver tag or it is a main or master branch.
 # Otherwise assemble the image tag from VERSION file + short commit SHA and
