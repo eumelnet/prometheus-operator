@@ -25,6 +25,7 @@ type ReceiverApplyConfiguration struct {
 	SlackConfigs     []SlackConfigApplyConfiguration     `json:"slackConfigs,omitempty"`
 	WebhookConfigs   []WebhookConfigApplyConfiguration   `json:"webhookConfigs,omitempty"`
 	WeChatConfigs    []WeChatConfigApplyConfiguration    `json:"wechatConfigs,omitempty"`
+	WebexConfigs     []WebexConfigApplyConfiguration     `json:"webexConfigs,omitempty"`
 	EmailConfigs     []EmailConfigApplyConfiguration     `json:"emailConfigs,omitempty"`
 	VictorOpsConfigs []VictorOpsConfigApplyConfiguration `json:"victoropsConfigs,omitempty"`
 	PushoverConfigs  []PushoverConfigApplyConfiguration  `json:"pushoverConfigs,omitempty"`
@@ -107,6 +108,16 @@ func (b *ReceiverApplyConfiguration) WithWeChatConfigs(values ...*WeChatConfigAp
 			panic("nil value passed to WithWeChatConfigs")
 		}
 		b.WeChatConfigs = append(b.WeChatConfigs, *values[i])
+	}
+	return b
+}
+
+func (b *ReceiverApplyConfiguration) WithWebexConfigs(values ...*WebexConfigApplyConfiguration) *ReceiverApplyConfiguration {
+	for i := range values {
+		if values[i] == nil {
+			panic("nil value passed to WithWebexConfigs")
+		}
+		b.WebexConfigs = append(b.WebexConfigs, *values[i])
 	}
 	return b
 }

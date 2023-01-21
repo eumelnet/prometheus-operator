@@ -174,6 +174,8 @@ type Receiver struct {
 	SNSConfigs []SNSConfig `json:"snsConfigs,omitempty"`
 	// List of Telegram configurations.
 	TelegramConfigs []TelegramConfig `json:"telegramConfigs,omitempty"`
+	// List of Webex configurations.
+	WebexConfigs []WebexConfig `json:"webexConfigs,omitempty"`
 }
 
 // PagerDutyConfig configures notifications via PagerDuty.
@@ -570,6 +572,14 @@ type HTTPConfig struct {
 	// +optional
 	FollowRedirects *bool `json:"followRedirects,omitempty"`
 }
+
+type WebexConfig struct {
+	SendResolved *bool `json:"sendResolved,omitempty"`
+	APIURL string `json:"apiURL,omitempty"`
+	RoomID string `json:"roomID,omitempty"`
+	Message string `json:"message,omitempty"`
+	HTTPConfig *HTTPConfig `json:"httpConfig,omitempty"`
+}]
 
 // WeChatConfig configures notifications via WeChat.
 // See https://prometheus.io/docs/alerting/latest/configuration/#wechat_config
