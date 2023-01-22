@@ -233,6 +233,8 @@ func ForKind(kind schema.GroupVersionKind) interface{} {
 		return &monitoringv1alpha1.WebhookConfigApplyConfiguration{}
 	case v1alpha1.SchemeGroupVersion.WithKind("WeChatConfig"):
 		return &monitoringv1alpha1.WeChatConfigApplyConfiguration{}
+	case v1alpha1.SchemeGroupVersion.WithKind("WebexConfig"):
+		return &monitoringv1alpha1.WebexConfigApplyConfiguration{}
 
 		// Group=monitoring.coreos.com, Version=v1beta1
 	case v1beta1.SchemeGroupVersion.WithKind("AlertmanagerConfig"):
