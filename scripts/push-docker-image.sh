@@ -20,9 +20,9 @@ CPU_ARCHS="amd64 arm64 arm ppc64le s390x"
 REGISTRIES="${REGISTRIES:-"quay.io ghcr.io"}"
 
 # IMAGE_OPERATOR, IMAGER_RELOADER and IMAGE_WEBHOOK need to be exported to be used by `make`
-export IMAGE_OPERATOR="${IMAGE_OPERATOR:-"eumel8/prometheus-operator/prometheus-operator"}"
-export IMAGE_RELOADER="${IMAGE_RELOADER:-"eumel8/prometheus-operator/prometheus-config-reloader"}"
-export IMAGE_WEBHOOK="${IMAGE_WEBHOOK:="eumel8/prometheus-operator/admission-webhook"}"
+export IMAGE_OPERATOR="${IMAGE_OPERATOR:-"eumelnet/prometheus-operator/prometheus-operator"}"
+export IMAGE_RELOADER="${IMAGE_RELOADER:-"eumelnet/prometheus-operator/prometheus-config-reloader"}"
+export IMAGE_WEBHOOK="${IMAGE_WEBHOOK:="eumelnet/prometheus-operator/admission-webhook"}"
 # Figure out if current commit is tagged
 export TAG="${GITHUB_REF##*/}"
 
