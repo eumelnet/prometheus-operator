@@ -16,17 +16,13 @@
 
 package v1alpha1
 
-import (
-	v1 "k8s.io/api/core/v1"
-)
-
 // WebexConfigApplyConfiguration represents an declarative configuration of the WebexConfig type for use
 // with apply.
 type WebexConfigApplyConfiguration struct {
-	SendResolved *bool `json:"sendResolved,omitempty"`
-	APIURL string `json:"apiURL,omitempty"`
-	RoomID string `json:"roomID,omitempty"`
-	Message string `json:"message,omitempty"`
+	SendResolved *bool                         `json:"sendResolved,omitempty"`
+	APIURL       *string                       `json:"apiURL,omitempty"`
+	RoomID       *string                       `json:"roomID,omitempty"`
+	Message      *string                       `json:"message,omitempty"`
 	HTTPConfig   *HTTPConfigApplyConfiguration `json:"httpConfig,omitempty"`
 }
 
